@@ -1,4 +1,6 @@
 # ---- Funciones provistas (NO modificar) ----
+from traceback import print_tb
+
 
 def is_even(n):
     """Dado un número entero n, retorna True si es par, False si es impar."""
@@ -22,4 +24,23 @@ def classify_number(n):
       - "negative odd"    (negativo e impar)
       - "zero"            (el número es 0)
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    if n==0:
+        return "zero"
+
+    if is_positive(n):
+        if is_even(n):
+            return "positive even"
+        else:
+            return "positive odd"
+
+    else:
+        if is_even(n):
+            return "negative even"
+        else:
+            return "negative odd"
+
+print(classify_number(4))
+print(classify_number(3))
+print(classify_number(-2))
+print(classify_number(-1))
+print(classify_number(0))
